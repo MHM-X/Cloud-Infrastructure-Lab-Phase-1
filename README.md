@@ -16,51 +16,9 @@ The environment currently consists of a dedicated firewall/gateway, load balance
 
 ## Architecture
 
-```text
-                         Internet
-                            │
-                            ▼
-                       Cloudflare
-                            │
-                     Cloudflare Tunnel
-                            │
-                            ▼
-                  ┌───────────────────┐
-                  │     OPNsense      │
-                  │ Firewall / Gateway│
-                  │   192.168.56.9    │
-                  └─────────┬─────────┘
-                            │
-                    Private Lab Network
-                      192.168.56.0/24
-                            │
-                            ▼
-                  ┌───────────────────┐
-                  │   Nginx Load      │
-                  │     Balancer      │
-                  │   192.168.56.8    │
-                  └─────────┬─────────┘
-                            │
-                   ┌────────┴────────┐
-                   │                 │
-                   ▼                 ▼
-          ┌────────────────┐ ┌────────────────┐
-          │ Application VM1│ │ Application VM2│
-          │ 192.168.56.6   │ │ 192.168.56.7   │
-          │ Flask          │ │ Flask          │
-          │ Gunicorn       │ │ Gunicorn       │
-          │ Nginx          │ │ Nginx          │
-          └───────┬────────┘ └───────┬────────┘
-                  │                  │
-                  └────────┬─────────┘
-                           │
-                           ▼
-                  ┌───────────────────┐
-                  │   PostgreSQL DB   │
-                  │   192.168.56.5    │
-                  │     Port 5432     │
-                  └───────────────────┘
-```
+![Architecture](architecture.png)
+
+---
 
 ### Network Design
 
