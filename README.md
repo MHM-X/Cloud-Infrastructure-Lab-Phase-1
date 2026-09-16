@@ -1,16 +1,8 @@
 # Production-Style DevOps Home Lab — Phase 1
 
-> A hands-on infrastructure project built to apply networking, Linux administration, server deployment, firewalling, load balancing, backend services, database infrastructure, and secure external access in a self-hosted environment.
-
 ## Overview
 
 This project is the first infrastructure phase of my Cloud & DevOps learning roadmap.
-
-Instead of learning infrastructure concepts independently, I built a small production-style environment around a real backend application and progressively turned it into a multi-server architecture.
-
-The goal of this phase was not to follow a deployment tutorial, but to understand how the individual infrastructure components work together as one system.
-
-The environment currently consists of a dedicated firewall/gateway, load balancer, multiple application servers, a separate PostgreSQL database server, and Cloudflare Tunnel for external access.
 
 ---
 
@@ -268,44 +260,5 @@ Cloudflare Tunnel was used to provide external access without exposing the inter
 
 ---
 
-## Phase 1 Outcome
+>This phase established the infrastructure foundation for the next stages of the roadmap.
 
-At the end of Phase 1, the lab provides a functional multi-tier infrastructure environment:
-
-```text
-Internet
-   ↓
-Cloudflare
-   ↓
-Cloudflare Tunnel
-   ↓
-OPNsense
-   ↓
-Nginx Load Balancer
-   ↓
-Flask / Gunicorn
-   ↓
-PostgreSQL
-```
-
-This phase established the infrastructure foundation for the next stages of the roadmap.
-
----
-
-## Next Phase
-
-### Phase 2 — Observability & Automation
-
-The next phase will extend the existing infrastructure rather than rebuild it.
-
-Planned components include:
-
-* Prometheus
-* Node Exporter
-* Grafana
-* Monitoring dashboards
-* Alerting
-* Docker
-* GitHub Actions
-
-The objective is to move from simply **running infrastructure** to being able to **observe, monitor, and automate it**.
